@@ -1,0 +1,30 @@
+<div fxLayout="row" fxLayoutAlign="end start" class="head-tab">
+  <button mat-button color="primary" class="auth-button">
+    <h3>{{ 'MESSAGE.TOTALPRICE' | translate }}  {{totalAmount}}</h3>
+  </button>
+</div>
+
+<mat-list>
+  <mat-list-item *ngFor="let item of cartService.carts; last as last">
+    <img matListAvatar src="{{ item.icon }}" alt="{{item.name}}">
+    <h3 matLine>
+      {{item.name}} 
+    </h3>
+    <p matLine>
+      <span> {{item.attr1}} </span>
+      <span class="demo-2"> -- {{item.descn}} </span>
+    </p>
+    <button mat-button>{{item.listprice}}</button>
+    <button mat-icon-button color="primary" (click)="deleteCart(item)">
+      <mat-icon aria-label="Delete from cart">delete</mat-icon>
+    </button>
+    <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+  </mat-list-item>
+</mat-list>
+
+<div fxLayout="column" fxLayoutAlign="center end" class="wrap-box">
+  <button mat-raised-button color="primary" class="auth-button" (click)="placeOrder()">
+    <mat-icon>payment</mat-icon>
+    <span>  {{ 'MESSAGE.PLACEORDER' | translate }}</span>
+  </button>
+</div>  

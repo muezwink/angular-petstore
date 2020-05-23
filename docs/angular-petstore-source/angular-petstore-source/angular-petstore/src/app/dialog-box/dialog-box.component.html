@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content>
+  <p>{{data.message}}</p>
+</div>
+<div mat-dialog-actions fxLayout="row" fxLayoutAlign="space-around center" >
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.response">
+  </mat-form-field>
+  <button mat-button (click)="onNoClick()">{{ 'COMMON.CANCEL' | translate }}</button>
+  <button mat-button [mat-dialog-close]="data.response" cdkFocusInitial>{{ 'COMMON.OK' | translate }}</button>
+</div>

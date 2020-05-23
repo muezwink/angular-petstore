@@ -1,0 +1,36 @@
+<div fxLayout="row" fxLayoutAlign="center start" class="head-tab" *ngIf="categoryService.doSearch">
+  <mat-form-field class="head-item">
+    <mat-label>Input</mat-label>
+    <input type="text" matInput (input)="filterList($event)">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+  <mat-form-field class="head-item" >
+    <mat-label>Select</mat-label>
+    <mat-select (selectionChange)="categoryService.getItemsByCategory($event.value)">
+      <mat-option *ngFor="let cat of categoryService.categories" [value]="cat.catid">
+        {{cat.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<mat-list>
+    <mat-list-item *ngFor="let item of categoryService.items; last as last">
+      <img matListAvatar src="{{ item.icon }}" alt="{{item.name}}">
+      <h3 matLine>
+        {{item.name}} 
+      </h3>
+      <p matLine>
+        <span> {{item.attr1}} </span>
+        <span> -- {{item.descn}} </span>
+      </p>
+      <button mat-button>{{item.listprice}}</button>
+      <button mat-icon-button color="primary" (click)="addCart(item)">
+        <mat-icon matTooltip="Add to cart" aria-label="Add to cart">shopping_cart</mat-icon>
+      </button>
+      <button mat-icon-button [color]="item.bookmarked ? 'warn' : 'primary'" (click)="flipWishmark(item.itemid)">
+        <mat-icon matTooltip="Add to wish" aria-label="Add to wish">{{ item.bookmarked ? 'favorite' : 'favorite_border' }}</mat-icon>
+      </button>
+      <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+    </mat-list-item>
+</mat-list>
+  

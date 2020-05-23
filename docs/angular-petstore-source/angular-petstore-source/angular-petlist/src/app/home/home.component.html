@@ -1,0 +1,12 @@
+<ul class="items">
+  <p>All  : <span>{{itemService.items.length}} </span></p>
+  <li *ngFor="let item of itemService.items" (click)="updateItem(item.id)">
+    <span class="item-id">{{item.id | uppercase}}</span> {{item.name}}
+  </li>
+</ul>
+<ul class="items">
+  <p>Available</p>
+  <li *ngFor="let item of (itemService.items | available)" (click)="updateItem(item.id)">
+    <span class="item-id">{{item.id | uppercase}}</span> {{item.name}}
+  </li>
+</ul>

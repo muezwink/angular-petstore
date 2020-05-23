@@ -1,0 +1,406 @@
+{
+  "account" : {
+    "0" : {
+      "addr1" : "901 San Antonio Road",
+      "addr2" : "MS UCUP02-206",
+      "city" : "Palo Alto",
+      "country" : "USA",
+      "email" : "yourname@yourdomain.com",
+      "firstname" : "ABC",
+      "lastname" : "XYX",
+      "password" : "petstore",
+      "phone" : "555-555-5555",
+      "state" : "CA",
+      "status" : "OK",
+      "userid" : "j2ee@yourdomain.com",
+      "zip" : "94303"
+    },
+    "1" : {
+      "addr1" : "901 San Antonio Road",
+      "addr2" : "MS UCUP02-206",
+      "city" : "Palo Alto",
+      "country" : "USA",
+      "email" : "acid@yourdomain.com",
+      "firstname" : "ABC",
+      "lastname" : "XYX",
+      "password" : "petstore",
+      "phone" : "555-555-5555",
+      "state" : "CA",
+      "status" : "OK",
+      "userid" : "ACID@yourdomain.com",
+      "zip" : "94303"
+    }
+  },
+  "category" : [ {
+    "bannername" : "assets/images/banner_birds.gif",
+    "catid" : "BIRDS",
+    "icon" : "assets/images/birds_icon.gif",
+    "name" : "Birds",
+    "product" : [ {
+      "descn" : "Great companion for up to 75 years",
+      "icon" : "assets/images/bird2.gif",
+      "item" : [ {
+        "attr1" : "Adult Male",
+        "itemid" : "EST-18",
+        "listprice" : 193.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 92
+      } ],
+      "name" : "Amazon Parrot",
+      "productid" : "AV-CB-01"
+    }, {
+      "descn" : "Great stress reliever",
+      "icon" : "assets/images/bird1.gif",
+      "item" : [ {
+        "attr1" : "Adult Male",
+        "itemid" : "EST-19",
+        "listprice" : 15.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 2
+      } ],
+      "name" : "Finch",
+      "productid" : "AV-SB-02"
+    } ]
+  }, {
+    "bannername" : "assets/images/banner_cats.gif",
+    "catid" : "CATS",
+    "icon" : "assets/images/cats_icon.gif",
+    "name" : "Cats",
+    "product" : [ {
+      "descn" : "Friendly house cat, doubles as a princess",
+      "icon" : "assets/images/cat1.gif",
+      "item" : [ {
+        "attr1" : "Adult Female",
+        "itemid" : "EST-16",
+        "listprice" : 93.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 12
+      }, {
+        "attr1" : "Adult Male",
+        "itemid" : "EST-17",
+        "listprice" : 93.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 12
+      } ],
+      "name" : "Persian",
+      "productid" : "FL-DLH-02"
+    }, {
+      "descn" : "Great for reducing mouse populations",
+      "icon" : "assets/images/cat2.gif",
+      "item" : [ {
+        "attr1" : "Tailless",
+        "itemid" : "EST-14",
+        "listprice" : 58.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 12
+      }, {
+        "attr1" : "With tail",
+        "itemid" : "EST-15",
+        "listprice" : 23.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 12
+      } ],
+      "name" : "Manx",
+      "productid" : "FL-DSH-01"
+    } ]
+  }, {
+    "bannername" : "assets/images/banner_dogs.gif",
+    "catid" : "DOGS",
+    "icon" : "assets/images/dogs_icon.gif",
+    "name" : "Dogs",
+    "product" : [ {
+      "descn" : "Friendly dog from England",
+      "icon" : "assets/images/dog2.gif",
+      "item" : [ {
+        "attr1" : "Male Adult",
+        "itemid" : "EST-6",
+        "listprice" : 18.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 12
+      }, {
+        "attr1" : "Female Puppy",
+        "itemid" : "EST-7",
+        "listprice" : 18.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 12
+      } ],
+      "name" : "Bulldog",
+      "productid" : "K9-BD-01"
+    }, {
+      "descn" : "Great companion dog",
+      "icon" : "assets/images/dog4.gif",
+      "item" : [ {
+        "attr1" : "Adult Male",
+        "itemid" : "EST-26",
+        "listprice" : 125.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 92
+      }, {
+        "attr1" : "Adult Female",
+        "itemid" : "EST-27",
+        "listprice" : 155.29,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 90
+      } ],
+      "name" : "Chihuahua",
+      "productid" : "K9-CW-01"
+    }, {
+      "descn" : "Great dog for a Fire Station",
+      "icon" : "assets/images/dog5.gif",
+      "item" : [ {
+        "attr1" : "Spotted Adult Female",
+        "itemid" : "EST-10",
+        "listprice" : 18.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 12
+      }, {
+        "attr1" : "Spotless Male Puppy",
+        "itemid" : "EST-9",
+        "listprice" : 18.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 12
+      } ],
+      "name" : "Dalmation",
+      "productid" : "K9-DL-01"
+    }, {
+      "descn" : "Cute dog from France",
+      "icon" : "assets/images/dog6.gif",
+      "item" : [ {
+        "attr1" : "Male Puppy",
+        "itemid" : "EST-8",
+        "listprice" : 18.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 12
+      } ],
+      "name" : "Poodle",
+      "productid" : "K9-PO-02"
+    }, {
+      "descn" : "Great family dog",
+      "icon" : "assets/images/dog1.gif",
+      "item" : [ {
+        "attr1" : "Adult Female",
+        "itemid" : "EST-28",
+        "listprice" : 155.29,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 90.0
+      } ],
+      "name" : "Golden Retriever",
+      "productid" : "K9-RT-01"
+    }, {
+      "descn" : "Great hunting dog",
+      "icon" : "assets/images/dog5.gif",
+      "item" : [ {
+        "attr1" : "Adult Male",
+        "itemid" : "EST-22",
+        "listprice" : 135.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 100
+      }, {
+        "attr1" : "Adult Female",
+        "itemid" : "EST-23",
+        "listprice" : 145.49,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 100
+      }, {
+        "attr1" : "Adult Male",
+        "itemid" : "EST-24",
+        "listprice" : 255.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 92
+      }, {
+        "attr1" : "Adult Female",
+        "itemid" : "EST-25",
+        "listprice" : 325.29,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 90
+      } ],
+      "name" : "Labrador Retriever",
+      "productid" : "K9-RT-02"
+    } ]
+  }, {
+    "bannername" : "assets/images/banner_fish.gif",
+    "catid" : "FISH",
+    "icon" : "assets/images/fish_icon.gif",
+    "name" : "Fish",
+    "product" : [ {
+      "descn" : "Fresh Water fish from Japan",
+      "icon" : "assets/images/fish3.gif",
+      "item" : [ {
+        "attr1" : "Spotted",
+        "itemid" : "EST-4",
+        "listprice" : 18.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 12
+      }, {
+        "attr1" : "Spotless",
+        "itemid" : "EST-5",
+        "listprice" : 18.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 12
+      } ],
+      "name" : "Koi",
+      "productid" : "FI-FW-01"
+    }, {
+      "descn" : "Fresh Water fish from China",
+      "icon" : "assets/images/fish2.gif",
+      "item" : [ {
+        "attr1" : "Adult Male",
+        "itemid" : "EST-20",
+        "listprice" : 5.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 2
+      }, {
+        "attr1" : "Adult Female",
+        "itemid" : "EST-21",
+        "listprice" : 5.29,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 1
+      } ],
+      "name" : "Goldfish",
+      "productid" : "FI-FW-02"
+    }, {
+      "descn" : "Salt Water fish from Australia",
+      "icon" : "assets/images/fish1.gif",
+      "item" : [ {
+        "attr1" : "Large",
+        "itemid" : "EST-1",
+        "listprice" : 16.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 10
+      }, {
+        "attr1" : "Small",
+        "itemid" : "EST-2",
+        "listprice" : 16.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 10
+      } ],
+      "name" : "Angelfish",
+      "productid" : "FI-SW-01"
+    }, {
+      "descn" : "Salt Water fish from Australia",
+      "icon" : "assets/images/fish4.gif",
+      "item" : [ {
+        "attr1" : "Toothless",
+        "itemid" : "EST-3",
+        "listprice" : 18.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 12
+      } ],
+      "name" : "Tiger Shark",
+      "productid" : "FI-SW-02"
+    } ]
+  }, {
+    "bannername" : "assets/images/banner_reptiles.gif",
+    "catid" : "REPTILES",
+    "icon" : "assets/images/reptiles_icon.gif",
+    "name" : "Reptiles",
+    "product" : [ {
+      "descn" : "Friendly green friend",
+      "icon" : "assets/images/lizard1.gif",
+      "item" : [ {
+        "attr1" : "Green Adult",
+        "itemid" : "EST-13",
+        "listprice" : 18.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 12
+      } ],
+      "name" : "Iguana",
+      "productid" : "RP-LI-02"
+    }, {
+      "descn" : "Doubles as a watch dog",
+      "icon" : "assets/images/snake1.gif",
+      "item" : [ {
+        "attr1" : "Venomless",
+        "itemid" : "EST-11",
+        "listprice" : 18.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 12
+      }, {
+        "attr1" : "Rattleless",
+        "itemid" : "EST-12",
+        "listprice" : 18.5,
+        "qty" : 10000,
+        "status" : "P",
+        "supplier" : 1,
+        "unitcost" : 12
+      } ],
+      "name" : "Rattlesnake",
+      "productid" : "RP-SN-01"
+    } ]
+  } ],
+  "order" : {
+  },
+  "supplier" : [ {
+    "addr1" : "600 Avon Way",
+    "city" : "Los Angeles",
+    "name" : "XYZ Pets",
+    "phone" : "212-947-0797",
+    "state" : "CA",
+    "status" : "AC",
+    "suppid" : 1,
+    "zip" : 94024
+  }, {
+    "addr1" : "700 Abalone Way",
+    "city" : "San Francisco",
+    "name" : "ABC Pets",
+    "phone" : "415-947-0797",
+    "state" : "CA",
+    "status" : "AC",
+    "suppid" : 2,
+    "zip" : 94024
+  } ]
+}

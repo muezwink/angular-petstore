@@ -1,0 +1,38 @@
+{
+    "COMMON": {
+      "LOGO": "앵귤러 팻스토어",
+      "SIGNUP": "계정생성",
+      "EMAIL": "이메일",
+      "PASSWORD": "패스워드",
+      "LANGUAGE": "언어",
+      "HOME": "홈",
+      "NAME": "이름",
+      "SETTING": "설정", 
+      "LOGIN": "로그인",
+      "LOGOUT": "로그아웃",
+      "COUNTRY": "국가",
+      "CITY": "도시",
+      "ADDRESS": "주소",
+      "ZIP": "우편번호",
+      "LIST": "상품목록",
+      "WISH": "관심상품",
+      "CART": "카트",
+      "RESETPASSWORD": "암호 초기화",
+      "OK": "확인",
+      "CANCEL": "취소",
+      "ORDER" : "주문",
+      "PAYMENT" : "결제"
+    },
+    "MESSAGE": {
+      "ERROR_INVALID": "유효한 값을 입력하세요",
+      "ERROR_PW_MINLENGTH": "패스워드는 최소 6자 이상이야 합니다",
+      "ERROR_MINLENGTH": "이름은 최소 2자 이상이야 합니다",
+      "PLEASELOGIN": "  이메일로 로그인 하세요",
+      "CREATEACCOUNT": "새 계정 생성",
+      "UPDATEACCOUNT": "계정정보 변경",
+      "RESETPASSWORD": "패스워드 초기화",
+      "PLEASECONNECT": "네트워크 접속을 확인하세요...",
+      "TOTALPRICE": "총 금액은  ",
+      "PLACEORDER": "주문"
+    }  
+  }

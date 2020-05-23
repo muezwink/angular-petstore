@@ -53,10 +53,8 @@ export class ItemService {
   }
 
   saveItems(){
-console.log("saveItems s");
     //this.storage.store('items', this.items);
-    // localStorage.setItem('items', JSON.stringify(this.items));
-console.log("saveItems e");
+    localStorage.setItem('items', JSON.stringify(this.items));
   }
 
   getItem(id: string){
@@ -64,12 +62,10 @@ console.log("saveItems e");
   }
 
   addItem(item: Item){
-console.log("addItem s");
+
     this.items.push(item);
     //this.saveItems();
     // Use Firebase 
-    console.log("addItem_item " + item);
-console.log("addItem e");
     return this.fireData.ref(ItemService.petlist).push(item);
   }
 

@@ -1,0 +1,59 @@
+<mat-horizontal-stepper [linear]="true" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="accountForm">
+        <ng-template matStepLabel>{{ 'COMMON.ORDER' | translate }}</ng-template>
+        <mat-form-field class="auth-button">
+          <mat-label color="primary">{{ 'COMMON.NAME' | translate }}</mat-label>
+          <input matInput formControlName="name" type="text" [placeholder]="commonService.messageYourName">
+          <mat-error *ngIf="accountForm.controls['name'].invalid">{{getNameErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="auth-button">
+          <mat-label color="primary">{{ 'COMMON.COUNTRY' | translate }}</mat-label>
+          <mat-select formControlName="country">
+            <mat-option *ngFor="let data of countries" [value]="data.value">
+                {{ data.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="accountForm.controls['country'].invalid">{{getCountryErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="auth-button">
+          <mat-label color="primary">{{ 'COMMON.CITY' | translate }}</mat-label>
+          <input matInput formControlName="city" type="text" [placeholder]="commonService.messageYourCity">
+          <mat-error *ngIf="accountForm.controls['city'].invalid">{{getCityErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="auth-button">
+          <mat-label color="primary">{{ 'COMMON.ADDRESS' | translate }}</mat-label>
+          <input matInput formControlName="address" type="text" [placeholder]="commonService.messageYourAddress">
+          <mat-error *ngIf="accountForm.controls['address'].invalid">{{getAddressErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="auth-button">
+          <mat-label color="primary">{{ 'COMMON.ZIP' | translate }}</mat-label>
+          <input matInput formControlName="zip" maxlength="5" type="number" [placeholder]="commonService.messageYourZip">
+          <mat-error *ngIf="accountForm.controls['zip'].invalid">{{getZipErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext [disabled]="!accountForm.valid">Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form (submit)="processPayment($event)">
+        <ng-template matStepLabel>{{ 'COMMON.PAYMENT' | translate }}</ng-template>
+        <div fxLayout="column" fxLayoutAlign="space-around center" >
+          <h1>
+            Credit or debit card
+          </h1>
+
+        </div>
+        <button mat-raised-button color="primary" class="auth-button" type="submit">
+          <mat-icon>payment</mat-icon>
+          <span>  {{ 'MESSAGE.PLACEORDER' | translate }}</span>
+        </button>
+        
+      </form>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>     
+      </div>
+    </mat-step>
+</mat-horizontal-stepper>
+  

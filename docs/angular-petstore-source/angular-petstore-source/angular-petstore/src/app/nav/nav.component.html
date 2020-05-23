@@ -1,0 +1,87 @@
+<div class="wrapper"> 
+  <div [class]="commonService.doSpinner ? 'overlay' : 'none'">
+    <div class="spinner-wrapper">
+      <mat-spinner [style.display]="commonService.doSpinner ? 'block' : 'none'" style="margin-top:100px;"></mat-spinner>
+    </div>
+  </div> 
+  <div [class]="commonService.isConnected ? 'none' : 'overlay'">
+    <div class="spinner-wrapper">
+      <p class="error-message" *ngIf="!commonService.isConnected">{{ 'MESSAGE.PLEASECONNECT' | translate }}</p> 
+    </div>
+  </div> 
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+        <mat-toolbar *ngIf="commonService.currentUser.email">
+          <mat-toolbar-row class="menu-bg">
+            <img class="profile-picture" [src]="commonService.currentUser.photoURL ? commonService.currentUser.photoURL : '/assets/images/splash.png'">
+            <div fxLayout="column" fxLayoutAlign="start">
+              <span style="font-size: 70%;color:black">{{ commonService.currentUser.name }} </span>
+              <span style="font-size: 55%">{{ commonService.currentUser.email }} </span>
+            </div>
+          </mat-toolbar-row>
+      </mat-toolbar>
+      <mat-nav-list>
+        <a *ngFor="let item of appPages"
+          mat-list-item
+          [routerLink]="[item.url]"
+          routerLinkActive="list-item-active">
+          <mat-icon matListIcon class="app-nav-list-icon"> {{ item.icon }} </mat-icon>
+          {{item.title | translate }}
+          <span matBadge="{{cartService.carts.length}}" matBadgeOverlap="false" matBadgeColor="accent" *ngIf="(cartService.carts.length > 0) && (item.url === '/cart')"> </span>
+          <span matBadge="{{cartService.wishs.length}}" matBadgeOverlap="false" matBadgeColor="accent" *ngIf="(cartService.wishs.length > 0) && (item.url === '/wish')"> </span>    
+        </a>
+        <a *ngIf="!commonService.isLogin"
+          mat-list-item
+          routerLink="/login"
+          routerLinkActive="list-item-active">
+          <mat-icon matListIcon class="app-nav-list-icon">person</mat-icon>
+          {{ 'COMMON.LOGIN' | translate }}
+        </a>
+        <a *ngIf="commonService.isLogin"
+          mat-list-item
+          (click)="logout()"
+          routerLinkActive="list-item-active">
+          <mat-icon matListIcon class="app-nav-list-icon">exit_to_app</mat-icon>
+          {{ 'COMMON.LOGOUT' | translate }}
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content-bg">
+      <mat-toolbar color="primary" class="title-bg">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span> {{ 'COMMON.LOGO' | translate }} </span>
+        <!-- Simple solution to make end align -->
+        <div style="width: 100%"></div>
+        <button
+          type="button"
+          matTooltip="Search"
+          aria-label="Search"
+          mat-icon-button
+          (click)="doSerch()">
+          <mat-icon aria-label="Search icon">{{ categoryService.doSearch ? 'clear' : 'search' }}</mat-icon>
+        </button> 
+        <button
+          type="button"
+          matTooltip="Setting"
+          aria-label="Setting"
+          mat-icon-button
+          routerLink="/setting">
+          <mat-icon aria-label="Setting icon">settings</mat-icon>
+        </button> 
+      </mat-toolbar>
+      <!-- Add Content Here -->
+      <router-outlet></router-outlet> 
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+

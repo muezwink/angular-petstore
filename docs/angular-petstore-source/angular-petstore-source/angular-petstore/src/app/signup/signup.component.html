@@ -1,0 +1,47 @@
+<form fxLayout="column" fxLayoutAlign="center center" fxLayoutAlign="center center" class="wrap-box" [formGroup]="signupForm" (ngSubmit)="signupUser()" novalidate>
+    <mat-form-field class="auth-button">
+        <mat-label color="primary">{{ 'COMMON.EMAIL' | translate }}</mat-label>
+        <input matInput [placeholder]="commonService.messageYourEmailAddress" formControlName="email">
+        <mat-error *ngIf="signupForm.controls['email'].invalid">{{getEmailErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="auth-button">
+        <mat-label color="primary">{{ 'COMMON.PASSWORD' | translate }}</mat-label>
+        <input matInput [placeholder]="commonService.messageYourPassword" formControlName="password" type="password">
+        <mat-error *ngIf="signupForm.controls['password'].invalid">{{getPasswordErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="auth-button">
+        <mat-label color="primary">{{ 'COMMON.NAME' | translate }}</mat-label>
+        <input matInput formControlName="name" type="text" [placeholder]="commonService.messageYourName">
+        <mat-error *ngIf="signupForm.controls['name'].invalid">{{getNameErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="auth-button">
+        <mat-label color="primary">{{ 'COMMON.COUNTRY' | translate }}</mat-label>
+        <mat-select formControlName="country" [placeholder]="defaultCountry.name">
+        <mat-option *ngFor="let data of countries" [value]="data.value">
+            {{ data.name }}
+        </mat-option>
+        </mat-select>
+        <mat-error *ngIf="signupForm.controls['country'].invalid">{{getCountryErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="auth-button">
+        <mat-label color="primary">{{ 'COMMON.CITY' | translate }}</mat-label>
+        <input matInput formControlName="city" type="text" [placeholder]="commonService.messageYourCity">
+        <mat-error *ngIf="signupForm.controls['city'].invalid">{{getCityErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="auth-button">
+        <mat-label color="primary">{{ 'COMMON.ADDRESS' | translate }}</mat-label>
+        <input matInput formControlName="address" type="text" [placeholder]="commonService.messageYourAddress">
+        <mat-error *ngIf="signupForm.controls['address'].invalid">{{getAddressErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="auth-button">
+        <mat-label color="primary">{{ 'COMMON.ZIP' | translate }}</mat-label>
+        <input matInput formControlName="zip" maxlength="5" type="number" [placeholder]="commonService.messageYourZip">
+        <mat-error *ngIf="signupForm.controls['zip'].invalid">{{getZipErrorMessage()}}</mat-error>
+    </mat-form-field>
+    
+    <button mat-raised-button color="primary" class="auth-button" type="submit" [disabled]="!signupForm.valid">
+        <mat-icon>person_add</mat-icon>
+        <span>  {{ 'MESSAGE.CREATEACCOUNT' | translate }}</span>
+    </button>
+    </form>
+      

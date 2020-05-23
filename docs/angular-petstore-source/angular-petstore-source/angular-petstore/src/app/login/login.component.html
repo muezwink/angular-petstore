@@ -1,0 +1,30 @@
+<div fxLayout="column" fxLayoutAlign="center center" class="wrap-box">
+    <button mat-raised-button class="auth-button" [color]="'google'" (click)="googleUser()">
+      <img class="google-thumbnail" src="../../assets/icons/btn_google_light_normal_ios.svg">
+      <span>  Sign in With Google</span>
+    </button> 
+</div>
+<mat-divider class="divide-bar"></mat-divider> 
+<form fxLayout="column" fxLayoutAlign="center center" fxLayoutAlign="center center" class="wrap-box" [formGroup]="loginForm" (ngSubmit)="loginUser()" novalidate>
+<mat-form-field class="auth-button">
+    <mat-label color="primary">{{ 'COMMON.EMAIL' | translate }}</mat-label>
+    <input matInput [placeholder]="commonService.messageYourEmailAddress" formControlName="email">
+    <mat-error *ngIf="loginForm.controls['email'].invalid">{{getEmailErrorMessage()}}</mat-error>
+</mat-form-field>
+<mat-form-field class="auth-button">
+    <mat-label color="primary">{{ 'COMMON.PASSWORD' | translate }}</mat-label>
+    <input matInput [placeholder]="commonService.messageYourPassword" formControlName="password" type="password">
+    <mat-error *ngIf="loginForm.controls['password'].invalid">{{getPasswordErrorMessage()}}</mat-error>
+</mat-form-field>
+<button mat-raised-button color="primary" class="auth-button" type="submit" [disabled]="!loginForm.valid">
+    <mat-icon>email</mat-icon>
+    <span>  {{ 'MESSAGE.PLEASELOGIN' | translate }}</span>
+</button>
+</form> 
+<div fxLayout="column" fxLayoutAlign="center center">
+<button mat-button color="primary" routerLink="/signup">{{ 'COMMON.SIGNUP' | translate }}</button>
+<button mat-button color="primary" routerLink="/reset-password">{{ 'COMMON.RESETPASSWORD' | translate }}</button>      
+</div>
+  
+  
+  
