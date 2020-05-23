@@ -1,0 +1,39 @@
+{
+    "COMMON": {
+      "LOGO": "Angular Petstore",
+      "SIGNUP": "Sign Up",
+      "EMAIL": "Email",
+      "COURSE": "Course",
+      "PASSWORD": "Password",
+      "LANGUAGE": "Language",
+      "HOME": "Home",
+      "NAME": "Name",
+      "SETTING": "Setting", 
+      "LOGIN": "Log in",
+      "LOGOUT": "Log out",
+      "COUNTRY": "Country",
+      "CITY": "City",
+      "ADDRESS": "Address",
+      "ZIP": "Zip",
+      "LIST": "List",
+      "WISH": "Wish",
+      "CART": "Cart",
+      "RESETPASSWORD": "Reset Password",
+      "OK": "Ok",
+      "CANCEL": "Cancel",
+      "ORDER" : "Order",
+      "PAYMENT" : "Payment"
+    },
+    "MESSAGE": {
+      "ERROR_INVALID": "Enter a valid values.",
+      "ERROR_PW_MINLENGTH": "Password must be at least 6 characters long.",
+      "ERROR_MINLENGTH": "Field must be at least 2 characters long.",
+      "PLEASELOGIN": "  Sign in With Email",
+      "CREATEACCOUNT": "Create your Account",
+      "UPDATEACCOUNT": "Update your Account",
+      "RESETPASSWORD": "Reset Password",
+      "PLEASECONNECT": "Please connect to the Internet...", 
+      "TOTALPRICE": "Total price is ",
+      "PLACEORDER": "Place Order"
+    }    
+  }
