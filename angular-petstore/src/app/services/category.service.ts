@@ -9,6 +9,8 @@ export class CategoryService {
   public itemList: any;
   public categories = [];
   public items: Item[] = [];
+  public initialItems: Item[] = [];
+  public doSearch: boolean = false;
 
   constructor(private commonService: CommonService) { }
 
@@ -46,6 +48,7 @@ export class CategoryService {
                 bookmarked: false
               }
               this.items.push(currentItem);
+              this.initialItems.push(currentItem);
             }
           }
         }
@@ -54,9 +57,13 @@ export class CategoryService {
 
     });    
   }
+  
+  initializeItems(): void {
+    this.items = this.initialItems;
+  }
 
   getItemsByCategory(catid: string) {
-    // this.initializeItems();
+    this.initializeItems();
     this.items = this.items.filter(item => {
       if (item.catid && catid) {
         if (item.catid === catid) {
@@ -65,6 +72,29 @@ export class CategoryService {
         return false;
       }
     });
+  }
 
+  filterItems(searchTerm: string) {
+    this.initializeItems();
+    let itemTerm: string = '';
+    //const searchTerm = evt.srcElement.value;
+    
+    if (searchTerm) {
+      this.items = this.items.filter(item => {
+        itemTerm = item.catid + item.catname + item.name + item.descn + item.attr1;
+        if (itemTerm && searchTerm) {
+          if (itemTerm.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
+            return true;
+          }
+          return false;
+        }
+      });
+    } else {
+      return;
+    }
+  }
+  
+  flipSearch() {
+    this.doSearch = !this.doSearch;
   }
 }

@@ -15,6 +15,7 @@ import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './home/home.component';
 import { ItemComponent } from './item/item.component';
 import { ListComponent } from './list/list.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ListComponent } from './list/list.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
+    FlexLayoutModule,
     MatListModule
   ],
   providers: [],

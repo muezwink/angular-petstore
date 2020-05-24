@@ -22,4 +22,10 @@ export class ListComponent implements OnInit {
       this.categoryService.getItemsByCategory(id);
     } 
   }
+
+  filterList(evt: any) {
+    const searchTerm = evt.srcElement.value;
+    this.categoryService.filterItems(searchTerm);
+  }
+
 }

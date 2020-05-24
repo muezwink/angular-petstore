@@ -24,6 +24,14 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>angular-petstore</span>
+      <!-- Simple solution to make end align -->
+      <div style="width: 100%"></div>
+      <button type="button" matTooltip="Search" aria-label="Search" 
+         mat-icon-button (click)="doSearch()">
+        <mat-icon aria-label="Search icon">
+          {{ categoryService.doSearch ? 'clear' : 'search' }}
+        </mat-icon>
+      </button>
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet> 
