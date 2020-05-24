@@ -70,8 +70,8 @@ export function createTranslateLoader(http: HttpClient) {
 export class AppModule { 
   constructor(private translate: TranslateService) {
     // Set default language 'en-GB' -> 'en'
-    const defaultLanguage = environment.defaultLanguage.split('-')[0];
-    translate.setDefaultLang(defaultLanguage);
-    translate.use(defaultLanguage);
+    // const defaultLanguage = environment.defaultLanguage.split('-')[0];
+    // translate.setDefaultLang(defaultLanguage);
+    // translate.use(defaultLanguage);
   }
 }
