@@ -1,1 +1,22 @@
-<p>list works!</p>
+  <mat-list>
+      <mat-list-item *ngFor="let item of categoryService.items; last as last">
+        <img matListAvatar src="{{ item.icon }}" alt="{{item.name}}">
+        <h3 matLine>
+          {{item.name}} 
+        </h3>
+        <p matLine>
+          <span> {{item.attr1}} </span>
+          <span> -- {{item.descn}} </span>
+        </p>
+        <button mat-button>{{item.listprice}}</button>
+        <button mat-icon-button color="primary">
+          <mat-icon matTooltip="Add to cart" aria-label="Add to cart">shopping_cart</mat-icon>
+        </button>
+        <button mat-icon-button [color]="item.bookmarked ? 'warn' : 'primary'" >
+          <mat-icon matTooltip="Add to wish" aria-label="Add to wish">{{ item.bookmarked ? 'favorite' : 'favorite_border' }}</mat-icon>
+        </button>
+        <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+      </mat-list-item>
+  </mat-list>
+    
+  

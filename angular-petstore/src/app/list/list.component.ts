@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CategoryService } from '../services/category.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,
+    private route: ActivatedRoute,
+    public categoryService: CategoryService
+  ) {}
+  
 
-  ngOnInit(): void {
+  ngOnInit() {
+    let id = this.route.snapshot.paramMap.get('id');
+    if(id){
+      this.categoryService.getItemsByCategory(id);
+    } 
   }
-
 }

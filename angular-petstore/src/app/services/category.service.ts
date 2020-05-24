@@ -54,4 +54,17 @@ export class CategoryService {
 
     });    
   }
+
+  getItemsByCategory(catid: string) {
+    // this.initializeItems();
+    this.items = this.items.filter(item => {
+      if (item.catid && catid) {
+        if (item.catid === catid) {
+          return true;
+        }
+        return false;
+      }
+    });
+
+  }
 }
