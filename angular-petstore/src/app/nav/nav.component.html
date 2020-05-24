@@ -9,7 +9,7 @@
         mat-list-item          [routerLink]="[item.url]" 
         routerLinkActive="list-item-active">
         <mat-icon matListIcon class="app-nav-list-icon"> {{ item.icon }} </mat-icon>
-        {{item.title}}
+        {{item.title | translate }}
         <span matBadge="{{cartService.carts.length}}" matBadgeOverlap="false" matBadgeColor="accent" *ngIf="(cartService.carts.length > 0) && (item.url === '/cart')"> </span>
         <span matBadge="{{cartService.wishs.length}}" matBadgeOverlap="false" matBadgeColor="accent" *ngIf="(cartService.wishs.length > 0) && (item.url === '/wish')"> </span>    
       </a>
@@ -25,7 +25,9 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>angular-petstore</span>
+      <span>
+        {{ 'COMMON.LOGOUT' | translate }}
+      </span>
       <!-- Simple solution to make end align -->
       <div style="width: 100%"></div>
       <button type="button" matTooltip="Search" aria-label="Search" 
@@ -34,6 +36,14 @@
           {{ categoryService.doSearch ? 'clear' : 'search' }}
         </mat-icon>
       </button>
+      <button
+      type="button"
+      matTooltip="Setting"
+      aria-label="Setting"
+      mat-icon-button
+      routerLink="/setting">
+      <mat-icon aria-label="Setting icon">settings</mat-icon>
+    </button> 
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet> 

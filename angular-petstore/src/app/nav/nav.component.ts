@@ -14,22 +14,22 @@ import { Router } from '@angular/router';
 export class NavComponent {
   public appPages = [
     {
-      title: 'HOME',
+      title: 'COMMON.HOME',
       url: '/home',
       icon: 'home'
     },
     {
-      title: 'LIST',
+      title: 'COMMON.LIST',
       url: '/list',
       icon: 'list'
     },
     {
-      title: 'WISH',
+      title: 'COMMON.WISH',
       url: '/wish',
       icon: 'favorite'
     },
     {
-      title: 'CART',
+      title: 'COMMON.CART',
       url: '/cart',
       icon: 'shopping_cart'
     }

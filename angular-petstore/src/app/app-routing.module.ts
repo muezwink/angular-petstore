@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { ListComponent } from './list/list.component';
 import { CartComponent } from './cart/cart.component';
 import { WishComponent } from './wish/wish.component';
+import { SettingComponent } from './setting/setting.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'wish',
     component: WishComponent
+  },
+  {
+    path: 'setting',
+    component: SettingComponent
   }
 ];
 

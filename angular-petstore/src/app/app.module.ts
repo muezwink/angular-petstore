@@ -19,6 +19,19 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CartComponent } from './cart/cart.component';
 import { WishComponent } from './wish/wish.component';
 
+// Get locale environmet parameter
+import { environment } from '../environments/environment';
+
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { SettingComponent } from './setting/setting.component';
+
+// I18N Settings
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +40,8 @@ import { WishComponent } from './wish/wish.component';
     ItemComponent,
     ListComponent,
     CartComponent,
-    WishComponent
+    WishComponent,
+    SettingComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +54,24 @@ import { WishComponent } from './wish/wish.component';
     MatSidenavModule,
     MatIconModule,
     FlexLayoutModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [ HttpClient ]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(private translate: TranslateService) {
+    // Set default language 'en-GB' -> 'en'
+    const defaultLanguage = environment.defaultLanguage.split('-')[0];
+    translate.setDefaultLang(defaultLanguage);
+    translate.use(defaultLanguage);
+  }
+}
