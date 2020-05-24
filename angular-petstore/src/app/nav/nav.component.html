@@ -10,6 +10,8 @@
         routerLinkActive="list-item-active">
         <mat-icon matListIcon class="app-nav-list-icon"> {{ item.icon }} </mat-icon>
         {{item.title}}
+        <span matBadge="{{cartService.carts.length}}" matBadgeOverlap="false" matBadgeColor="accent" *ngIf="(cartService.carts.length > 0) && (item.url === '/cart')"> </span>
+        <span matBadge="{{cartService.wishs.length}}" matBadgeOverlap="false" matBadgeColor="accent" *ngIf="(cartService.wishs.length > 0) && (item.url === '/wish')"> </span>    
       </a>
     </mat-nav-list>
   </mat-sidenav>

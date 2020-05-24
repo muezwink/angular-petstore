@@ -16,6 +16,8 @@ import { HomeComponent } from './home/home.component';
 import { ItemComponent } from './item/item.component';
 import { ListComponent } from './list/list.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CartComponent } from './cart/cart.component';
+import { WishComponent } from './wish/wish.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     NavComponent,
     HomeComponent,
     ItemComponent,
-    ListComponent
+    ListComponent,
+    CartComponent,
+    WishComponent
   ],
   imports: [
     BrowserModule,
