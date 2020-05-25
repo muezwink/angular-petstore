@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators} from '@angular/forms';
+import { CommonService } from '../services/common.service';
+import { AuthenticationService } from '../services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reset-password',
@@ -6,10 +10,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reset-password.component.scss']
 })
 export class ResetPasswordComponent implements OnInit {
+  resetPasswordForm = this.formBuilder.group({
+    email: [null, [Validators.required, Validators.email]]
+  });
 
-  constructor() { }
+  constructor(private router: Router,
+    public commonService: CommonService,
+    private authenticationService: AuthenticationService,
+    public formBuilder: FormBuilder) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
+  getEmailErrorMessage() {
+    return this.resetPasswordForm.controls.email.hasError('required') ? this.commonService.messageRequired :
+        this.resetPasswordForm.controls.email.hasError('email') ? this.commonService.messageInvaildEmail :
+            '';
+  }
+
+  resetPassword(){
+      this.authenticationService.resetPassword(this.resetPasswordForm.value.email);
+  }
 }
