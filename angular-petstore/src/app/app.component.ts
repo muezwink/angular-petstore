@@ -8,8 +8,6 @@ import 'firebase/database';
 import 'firebase/auth';
 // Get firebase environmet parameter
 import { environment } from '../environments/environment';
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,7 +16,8 @@ import { environment } from '../environments/environment';
 export class AppComponent {
   title = 'angular-petstore';
   
-  constructor(private commonService: CommonService,
+  constructor(private router: Router,
+              private commonService: CommonService,
               private categoryService: CategoryService,
               private cartService: CartService
              )
@@ -26,6 +25,40 @@ export class AppComponent {
     firebase.initializeApp(environment.firebase);
     this.commonService.fireAuth = firebase.auth();
     this.commonService.fireData = firebase.database();
+    this.commonService.userProfile = this.commonService.fireData.ref(CommonService.account);
+
+    this.commonService.fireAuth.onAuthStateChanged((user) => {
+      if (user) {
+        this.commonService.userProfile.child(user.uid).update({
+          //uid: user.uid,
+          providerData: user.providerData,     
+          loginTimestamp: new Date().getTime()  
+        });
+        this.commonService.isLogin = true;
+        this.commonService.userProfile.child(user.uid).on('value', snapshot => { 
+          this.commonService.currentUser = {
+            email: user.email,
+            name: user.displayName,
+            country: snapshot.child('country').val(),
+            city: snapshot.child('city').val(),
+            address: snapshot.child('address').val(),
+            zip: snapshot.child('zip').val(),
+            photoURL: user.photoURL,
+            uid: user.uid    
+          }      
+        }); 
+  
+        this.router.navigateByUrl('/home');
+      } else {
+        this.commonService.isLogin = false;
+        // Initialize currentUser
+        this.commonService.currentUser = {
+          email: null
+        }    
+        //{displayName: '', email: '', photoURL: '/assets/images/splash.png'};
+        this.router.navigateByUrl('/login');
+      }
+    });
 
     this.initializeApp();
   }

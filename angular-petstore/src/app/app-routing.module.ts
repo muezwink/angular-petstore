@@ -4,7 +4,10 @@ import { HomeComponent } from './home/home.component';
 import { ListComponent } from './list/list.component';
 import { CartComponent } from './cart/cart.component';
 import { WishComponent } from './wish/wish.component';
+import { LoginComponent } from './login/login.component';
 import { SettingComponent } from './setting/setting.component';
+import { SignupComponent } from './signup/signup.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const routes: Routes = [
   {
@@ -33,8 +36,20 @@ const routes: Routes = [
     component: WishComponent
   },
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     path: 'setting',
     component: SettingComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
+  },
+  {
+    path: 'reset-password',
+    component: ResetPasswordComponent
   }
 ];
 

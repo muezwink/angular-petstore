@@ -19,6 +19,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CartComponent } from './cart/cart.component';
 import { WishComponent } from './wish/wish.component';
 
+// Form Module
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 // Get locale environmet parameter
 import { environment } from '../environments/environment';
 
@@ -26,6 +29,9 @@ import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-transla
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { SettingComponent } from './setting/setting.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 // I18N Settings
 export function createTranslateLoader(http: HttpClient) {
@@ -41,7 +47,10 @@ export function createTranslateLoader(http: HttpClient) {
     ListComponent,
     CartComponent,
     WishComponent,
-    SettingComponent
+    SettingComponent,
+    LoginComponent,
+    SignupComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +65,8 @@ export function createTranslateLoader(http: HttpClient) {
     FlexLayoutModule,
     MatListModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
